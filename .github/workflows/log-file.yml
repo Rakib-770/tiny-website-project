@@ -1,0 +1,17 @@
+name: Log HTML File Content
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  log-file-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Read and output file content
+        run: |
+          echo "Contents of index.html:"
+          cat index.html
